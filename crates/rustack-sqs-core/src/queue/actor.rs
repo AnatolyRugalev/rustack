@@ -714,8 +714,8 @@ impl QueueActor {
             }
         };
 
-        if changed {
-            self.message_notify.notify_waiters();
+        if changed && !self.pending_long_polls.is_empty() {
+            self.fulfill_pending_long_polls();
         }
 
         self.expire_long_polls();

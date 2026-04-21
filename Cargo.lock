@@ -3125,6 +3125,7 @@ dependencies = [
  "aws-smithy-runtime-api",
  "base64",
  "bytes",
+ "futures",
  "rand",
  "reqwest 0.13.2",
  "serde_json",
